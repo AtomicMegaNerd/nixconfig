@@ -66,26 +66,66 @@
     enable = false;
   };
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
+  programs.fish =
+    {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
 
-    plugins = [
-      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-      {
-        name = "bobthefish";
-        src = pkgs.fetchFromGitHub
-          {
-            owner = "oh-my-fish";
-            repo = "theme-bobthefish";
-            rev = "2dcfcab653ae69ae95ab57217fe64c97ae05d8de";
-            sha256 = "jBbm0wTNZ7jSoGFxRkTz96QHpc5ViAw9RGsRBkCQEIU=";
-          };
-      }
-    ];
-  };
+      shellAliases = {
+        ls = "exa";
+        ll = "exa -lah";
+        df = "duf";
+        cat = "bat --paging=never --style=plain";
+
+        # Directory aliases
+        ch = "cd ~";
+        csrc = "cd ~/Code";
+        cr = "cd ~/Code/Rust/";
+        cg = "cd ~/Code/Go/";
+        cpy = "cd ~/Code/Python/";
+        ce = "cd ~/Code/Exercism/";
+        cgo = "cd ~/Code/Go/";
+        cdot = "cd ~/Code/Configs/dotfiles/";
+
+        # Just use ripgrep
+        grep = "rg";
+
+        # Convenient shortcuts
+        vconf = "nvim $HOME/.config/nvim/init.lua";
+        fconf = "nvim $HOME/.config/fish/config.fish";
+        aconf = "nvim $HOME/.config/alacritty/alacritty.yml";
+        nconf = "nvim $HOME/.config/nixpkgs/home.nix";
+
+        tl = "tmux list-sessions";
+        ta = "tmux attach";
+        tk = "tmux kill-session";
+        tka = "tmux kill-server";
+      };
+
+      functions =
+        {
+          tn = "tmux new -s (basename (eval pwd))";
+        };
+
+      plugins = [
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+        {
+          name = "bobthefish";
+          src = pkgs.fetchFromGitHub
+            {
+              owner = "oh-my-fish";
+              repo = "theme-bobthefish";
+              rev = "2dcfcab653ae69ae95ab57217fe64c97ae05d8de";
+              sha256 = "jBbm0wTNZ7jSoGFxRkTz96QHpc5ViAw9RGsRBkCQEIU=";
+            };
+        }
+      ];
+    };
 
   fonts.fontconfig.enable = true;
 
