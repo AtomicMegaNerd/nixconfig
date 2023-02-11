@@ -17,8 +17,8 @@
   };
 
   programs.fish = {
-    loginShellInit = ''
-      set -gx XDG_DATA_DIRS $XDG_DATA_DIRS:/home/rcd/.nix-profile/share/applications
+    shellInit = ''
+      set -gx NIX_PATH $NIX_PATH:$HOME/.nix-defexpr/channels
     '';
   };
 
