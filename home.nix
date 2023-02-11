@@ -72,6 +72,8 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+
+        ### Nightfox theme ###
         set -l foreground cdcecf
         set -l selection 223249
         set -l comment 526176
@@ -226,6 +228,18 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+  };
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "Nord";
+    };
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.alacritty = {
