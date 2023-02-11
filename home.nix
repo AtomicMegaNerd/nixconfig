@@ -51,6 +51,8 @@
       rnix-lsp
       ruff
       rust-analyzer
+      yaml-language-server
+      nodePackages.typescript-language-server
 
       # null-ls sources
       black
