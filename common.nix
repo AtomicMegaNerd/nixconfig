@@ -34,6 +34,7 @@
     poetry
     ruff
     yarn
+    go-tools
   ];
 
   programs.neovim = {
