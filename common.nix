@@ -77,6 +77,10 @@
   programs.fish =
     {
       enable = true;
+
+      loginShellInit = ''
+        set -gx NIX_PATH $NIX_PATH:/$HOME/.nix-defexpr/channels
+      '';
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
 
