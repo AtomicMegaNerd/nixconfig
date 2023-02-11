@@ -33,6 +33,7 @@
     exercism
     poetry
     ruff
+    yarn
   ];
 
   programs.neovim = {
