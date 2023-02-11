@@ -21,7 +21,6 @@
     git
     gcc
     gnumake
-    rustup
     zip
     unzip
     go

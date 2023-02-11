@@ -8,8 +8,8 @@
   };
 
   programs.fish = {
-    loginShellInit = ''
-      set -gx NIX_PATH $NIX_PATH:/$HOME/.nix-defexpr/channels
+    shellInit = ''
+      set -gx NIX_PATH $NIX_PATH:$HOME/.nix-defexpr/channels
     '';
   };
 }
