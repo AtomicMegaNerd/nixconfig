@@ -4,26 +4,6 @@ if not status then
 end
 
 ts.setup({
-	ensure_installed = {
-		"python",
-		"go",
-		"haskell",
-		"rust",
-		"fish",
-		"bash",
-		"lua",
-		"yaml",
-		"vim",
-		"yaml",
-		"typescript",
-		"javascript",
-		"tsx",
-		"toml",
-		"html",
-		"css",
-		"json",
-    "nix",
-	},
 	highlight = {
 		enable = true,
 		disable = {},

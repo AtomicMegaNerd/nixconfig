@@ -62,6 +62,10 @@
       stylua
       nixpkgs-fmt
     ];
+
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
   };
 
   programs.bash = {
