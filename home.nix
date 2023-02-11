@@ -32,7 +32,8 @@
     procs
     just
     exercism
-
+    poetry
+    ruff
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
