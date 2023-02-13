@@ -71,13 +71,6 @@ return packer.startup({
 			requires = { "nvim-lua/plenary.nvim" },
 		})
 
-		-- Treesitter
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			tag = "v0.8.1",
-			run = ":TSUpdate",
-		})
-
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -87,7 +80,6 @@ return packer.startup({
 		use({
 			"neovim/nvim-lspconfig",
 		})
-
 
 		use("j-hui/fidget.nvim")
 

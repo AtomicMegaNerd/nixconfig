@@ -74,7 +74,7 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Enable the following language servers
-local servers = { "gopls", "yamlls", "bashls", "hls", "pyright", "rnix", "ruff_lsp" }
+local servers = { "gopls", "yamlls", "bashls", "hls", "pyright", "rnix" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
@@ -90,7 +90,7 @@ nvim_lsp.tsserver.setup({
 })
 
 -- Make sure we suppress warnings on the vim global object
-nvim_lsp.sumneko_lua.setup({
+nvim_lsp.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
