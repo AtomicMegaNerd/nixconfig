@@ -33,6 +33,8 @@
     exercism
     poetry
     ruff
+    yarn
+    go-tools
   ];
 
   programs.neovim = {
@@ -253,7 +255,8 @@
     enable = true;
     enableFishIntegration = true;
   };
- # Some weird bug
+
+  # Some weird bug
   manual.manpages.enable = false;
   manual.html.enable = false;
   manual.json.enable = false;
