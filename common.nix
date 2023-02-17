@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  pkgsUnstable = import <unstable> { };
+in
 {
   home.username = "rcd";
   home.homeDirectory = "/home/rcd";
@@ -39,10 +41,11 @@
 
   programs.neovim = {
     enable = true;
+    package = pkgsUnstable.neovim-unwrapped;
     defaultEditor = true;
     vimAlias = true;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgsUnstable; [
       # Language servers
       pyright
       gopls
@@ -66,7 +69,7 @@
     ];
 
     plugins = [
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      pkgsUnstable.vimPlugins.nvim-treesitter.withAllGrammars
     ];
   };
 

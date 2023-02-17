@@ -20,7 +20,6 @@
     shellInit = ''
       set -gx NIX_PATH $NIX_PATH:$HOME/.nix-defexpr/channels
       set -gx GOROOT /nix/store/p66a1hlyf342rdrymb14nqcfhnkz7mqc-home-manager-path/share/go
-      set -gx GOPATH $HOME/Code/Go
     '';
   };
 
